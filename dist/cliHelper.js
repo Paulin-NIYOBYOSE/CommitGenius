@@ -9,7 +9,7 @@ export async function promptUser(question, defaultValue) {
         output: process.stdout
     });
     return new Promise((resolve) => {
-        const styledQuestion = chalk.cyan.bold(`❓ ${question}`);
+        const styledQuestion = chalk.blue.bold(`❓ ${question}`);
         const prompt = defaultValue
             ? `${styledQuestion} ${chalk.gray(`(${defaultValue})`)}: `
             : `${styledQuestion}: `;
@@ -25,21 +25,21 @@ export function displayBanner() {
         horizontalLayout: 'default',
         verticalLayout: 'default'
     });
-    console.log(gradient.rainbow(title));
-    console.log(chalk.cyan.bold('                    🤖 AI-Powered Git Commit Messages ✨'));
+    console.log(chalk.blue.bold(title));
+    console.log(chalk.white.bold('                    🤖 AI-Powered Git Commit Messages ⚡'));
     console.log(chalk.gray('                         Making commits smarter, one diff at a time'));
     console.log('');
 }
 export function displayHelp() {
-    console.log(chalk.cyan.bold('\n📖 Usage:'));
+    console.log(chalk.blue.bold('\n📖 Usage:'));
     console.log(chalk.white('  commitgenius [options]\n'));
-    console.log(chalk.cyan.bold('⚙️  Options:'));
-    console.log(chalk.green('  -h, --help     ') + chalk.gray('Show this help message'));
-    console.log(chalk.green('  -v, --version  ') + chalk.gray('Show version information'));
-    console.log(chalk.green('  --no-ai        ') + chalk.gray('Skip AI generation and use manual input only'));
-    console.log(chalk.cyan.bold('\n💡 Examples:'));
-    console.log(chalk.yellow('  commitgenius           ') + chalk.gray('# Generate AI commit message for staged changes'));
-    console.log(chalk.yellow('  commitgenius --no-ai   ') + chalk.gray('# Manual commit message input only'));
+    console.log(chalk.blue.bold('⚙️  Options:'));
+    console.log(chalk.white('  -h, --help     ') + chalk.gray('Show this help message'));
+    console.log(chalk.white('  -v, --version  ') + chalk.gray('Show version information'));
+    console.log(chalk.white('  --no-ai        ') + chalk.gray('Skip AI generation and use manual input only'));
+    console.log(chalk.blue.bold('\n💡 Examples:'));
+    console.log(chalk.white('  commitgenius           ') + chalk.gray('# Generate AI commit message for staged changes'));
+    console.log(chalk.white('  commitgenius --no-ai   ') + chalk.gray('# Manual commit message input only'));
     console.log('');
 }
 export function displayError(message) {
@@ -49,7 +49,7 @@ export function displaySuccess(message) {
     console.log(chalk.green.bold(`✅ ${message}`));
 }
 export function displayInfo(message) {
-    console.log(chalk.blue(`ℹ️  ${message}`));
+    console.log(chalk.white(`ℹ️  ${message}`));
 }
 export function displayWarning(message) {
     console.log(chalk.yellow.bold(`⚠️  ${message}`));
@@ -63,8 +63,8 @@ export function displayCommitMessage(message) {
 }
 export function createLoadingSpinner(text) {
     return ora({
-        text: chalk.cyan(text),
-        color: 'cyan',
+        text: chalk.white(text),
+        color: 'blue',
         spinner: 'dots12'
     });
 }
@@ -72,7 +72,7 @@ export function displayDivider() {
     console.log(chalk.gray('─'.repeat(60)));
 }
 export function displayVersion(version) {
-    console.log(chalk.cyan.bold(`🚀 CommitGenius v${version}`));
+    console.log(chalk.blue.bold(`🚀 CommitGenius v${version}`));
     console.log(chalk.gray('   Built with ❤️  for better Git workflows'));
 }
 //# sourceMappingURL=cliHelper.js.map
