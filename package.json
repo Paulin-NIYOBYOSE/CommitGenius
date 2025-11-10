@@ -1,0 +1,31 @@
+{
+  "name": "commitgenius",
+  "version": "1.0.0",
+  "type": "module",
+  "main": "dist/cli.js",
+  "bin": {
+    "commitgenius": "./dist/cli.js"
+  },
+  "scripts": {
+    "build": "tsc",
+    "start": "node dist/cli.js",
+    "dev": "tsc && node dist/cli.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": ["git", "commit", "ai", "openai", "cli", "automation"],
+  "author": "",
+  "license": "ISC",
+  "description": "AI-powered Git commit message generator CLI tool",
+  "dependencies": {
+    "dotenv": "^17.2.3",
+    "openai": "^6.8.1",
+    "simple-git": "^3.30.0"
+  },
+  "devDependencies": {
+    "@types/node": "^24.10.0",
+    "typescript": "^5.9.3"
+  },
+  "engines": {
+    "node": ">=16.0.0"
+  }
+}
